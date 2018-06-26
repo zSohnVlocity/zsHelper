@@ -1,0 +1,17 @@
+{
+  "name": "zsHelpers",
+  "version": "0.0.0",
+  "description": "Help scripts for chrome inspector",
+  "main": "zsHelpers.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zSohnVlocity/zsHelper.git"
+  },
+  "author": "Zachary Sohn",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "svgify": "^0.0.0",
+    "uglify-js": "^2.4.11"
+  }
+}
