@@ -1,6 +1,6 @@
 {
   "name": "zsHelpers",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Help scripts for chrome inspector",
   "main": "zsHelpers.js",
   "repository": {
