@@ -81,23 +81,23 @@ function RegressionTester(tgtFn, prevVers){
 		if (tgtFn) registerTgt(tgtFn);
 		if (prevVers) registerPrev(prevVers);
 		console.log('initialized!');
-		console.log(this);
+		console.log(me);
 	}
 
 	// Private Methods
 	function registerTgt(tgtFn){
 		// save old version of function
-		this.tgtFn = tgtFn;
+		me.tgtFn = tgtFn;
 		// wrap function with redirect to storeArgs
 		tgtFn = function(){
 			window.setTimeout(storeArgs(this,arguments));
 			return me.tgtFn.apply(this,arguments);
 		};
-		return this.tgtFn;
+		return me.tgtFn;
 	}
 
 	function registerPrev(prevVers){
-		return (this.prevVers = prevVers);
+		return (me.prevVers = prevVers);
 	}
 
 	function runTest(argList){
@@ -109,7 +109,7 @@ function RegressionTester(tgtFn, prevVers){
 	}
 
 	function runTestAux(){
-		this.those.forEach(function(that){runTestRecurse.call(that,[]);});
+		me.those.forEach(function(that){runTestRecurse.call(that,[]);});
 	}
 
 	function runTestRecurse(argList){
@@ -122,10 +122,10 @@ function RegressionTester(tgtFn, prevVers){
 	}
 
 	function storeArgs(that,args){
-		if (!this.those.includes(args[i]))this.those.push(args[i]);
+		if (!me.those.includes(args[i]))me.those.push(args[i]);
 		for(var i=0;i<args.length;i++){
-			if (this.argStor[0]===undefined)this.argStor[0]=[];
-			if (!this.argStor[0].includes(args[i]))this.argStor[i].push(args[i]);
+			if (me.argStor[0]===undefined)me.argStor[0]=[];
+			if (!me.argStor[0].includes(args[i]))me.argStor[i].push(args[i]);
 		}
 	}
 
