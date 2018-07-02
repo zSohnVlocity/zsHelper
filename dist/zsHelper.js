@@ -81,6 +81,11 @@ function RegressionTester(tgtFn, prevVers){
 		if (prevVers) registerPrev(prevVers);
 		console.log('initialized!');
 		console.log(me);
+		Object.assign(me,{
+			runTest:runTest,
+			retisterTgt:registerTgt,
+			registerPrev:registerPrev
+		});
 	}
 
 	// Private Methods
