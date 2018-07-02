@@ -2,6 +2,7 @@
 
     function initialize(){
         registerHelper();
+        loadFiles();
         loadThirdPartyHelpers();
     }
 
@@ -56,6 +57,10 @@
                 links.push(decodeURIComponent(parseURL(input).stem.query.p1));
             }
         } else return true;
+    }
+
+    function loadFiles(){
+        window.zsHelper.testPropGetType = require('./modules/regressionTester/main.js');
     }
 
     initialize();
