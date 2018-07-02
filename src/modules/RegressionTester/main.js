@@ -58,4 +58,4 @@ function RegressionTester(tgtFn, prevVers){
 	init();
 }
 
-module.export = RegressionTester;
+module.exports = RegressionTester;
