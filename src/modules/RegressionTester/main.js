@@ -1,9 +1,11 @@
 function RegressionTester(tgtFn, prevVers){
-	// create this alias me
-	me = this;
 	this.those = [];
 	this.argStor = [];
 	this.resultDiff = [];
+	this.tgtFn={};
+	this.prevVer={};
+	// create this alias me
+	me = this;
 
 	function init(){
 		if (tgtFn) registerTgt(tgtFn);
