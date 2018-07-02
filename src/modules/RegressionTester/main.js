@@ -2,8 +2,6 @@ function RegressionTester(tgtFn, prevVers){
 	this.those = [];
 	this.argStor = [];
 	this.resultDiff = [];
-	this.tgtFn={};
-	this.prevVers={};
 	// create this alias me
 	me = this;
 
