@@ -123,8 +123,8 @@ function RegressionTester(tgtFn, prevVers){
 	function storeArgs(that,args){
 		if (!me.those.includes(args[i]))me.those.push(args[i]);
 		for(var i=0;i<args.length;i++){
-			if (me.argStor[0]===undefined)me.argStor[0]=[];
-			if (!me.argStor[0].includes(args[i]))me.argStor[i].push(args[i]);
+			if (me.argStor[i]===undefined)me.argStor[i]=[];
+			if (!me.argStor[i].includes(args[i]))me.argStor[i].push(args[i]);
 		}
 	}
 
