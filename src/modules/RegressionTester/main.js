@@ -39,7 +39,7 @@ function RegressionTester(tgtFn, prevVers){
 			tgtRes = me.tgtFn.apply(this,argList);
 			prevRes = me.prevVers.apply(this,argList);
 			if (tgtRes!=prevRes){me.resultDiff.push({this:this,args:argList,tgtRes:tgtRes,prevRes:prevRes});}
-		} else window.timeout(runTestAux);
+		} else window.setTimeout(runTestAux);
 	}
 
 	function runTestAux(){
