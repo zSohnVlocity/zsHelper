@@ -2,6 +2,7 @@ function RegressionTester(tgtFn, prevVers){
 	this.those = [];
 	this.argStor = [];
 	this.resultDiff = [];
+	this.wrappedTgt;
 	// create this alias me
 	me = this;
 
@@ -17,7 +18,7 @@ function RegressionTester(tgtFn, prevVers){
 		// save old version of function
 		me.tgtFn = tgtFn;
 		// wrap function with redirect to storeArgs
-		tgtFn = function(){
+		me.wrappedTgt = function(){
 			window.setTimeout(storeArgs(this,arguments));
 			return me.tgtFn.apply(this,arguments);
 		};
