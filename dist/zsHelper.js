@@ -73,13 +73,15 @@ function RegressionTester(tgtFn, prevVers){
 	this.argStor = [];
 	this.resultDiff = [];
 	this.tgtFn={};
-	this.prevVer={};
+	this.prevVers={};
 	// create this alias me
 	me = this;
 
 	function init(){
 		if (tgtFn) registerTgt(tgtFn);
 		if (prevVers) registerPrev(prevVers);
+		console.log('initialized!');
+		console.log(this);
 	}
 
 	// Private Methods
@@ -92,6 +94,10 @@ function RegressionTester(tgtFn, prevVers){
 			return me.tgtFn.apply(this,arguments);
 		};
 		return this.tgtFn;
+	}
+
+	function registerPrev(prevVers){
+		return (this.prevVers = prevVers);
 	}
 
 	function runTest(argList){
@@ -121,10 +127,6 @@ function RegressionTester(tgtFn, prevVers){
 			if (this.argStor[0]===undefined)this.argStor[0]=[];
 			if (!this.argStor[0].includes(args[i]))this.argStor[i].push(args[i]);
 		}
-	}
-
-	function registerPrev(prevVers){
-		return (this.prevFn = prevVers);
 	}
 
 	init();
