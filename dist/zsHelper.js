@@ -128,5 +128,5 @@ function RegressionTester(tgtFn, prevVers){
 	init();
 }
 
-modules.export = RegressionTester;
+module.export = RegressionTester;
 },{}]},{},[1]);
